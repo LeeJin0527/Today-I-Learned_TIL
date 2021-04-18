@@ -1,8 +1,8 @@
 # TIL
 
-# 2021-04-18
-# mfc 
-# language : c++
+### 2021-04-18
+### mfc 
+### language : c++
 
 - GroupBox 
 - RadioButton
