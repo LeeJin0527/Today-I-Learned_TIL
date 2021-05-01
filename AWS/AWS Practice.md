@@ -34,7 +34,7 @@ IGW (internet gateway)
 인터넷 게이트웨이 
 
 	--> 인터넷 게이트웨이 생성 버튼 클릭 
-	- 이름 태그 : testIGWå
+	- 이름 태그 : testIGW
 	- Name : testIGW
 	--> 인터넷 게이트웨이 생성 클릭 
 	
