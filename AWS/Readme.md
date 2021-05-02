@@ -204,18 +204,16 @@ EC2  --> 탄력적 IP (Elastic IP )
 	
 
 
-pwd 
+	pwd 
 
-위치가 --> webserver.pem 파일의 위치 
+	위치가 --> webserver.pem 파일의 위치 
 
-cd 
-
-
-chmod 600 webserver.pem
-
-ssh   -i     webserver.pem    -l     ec2-user    ip
+	cd 
 
 
+	chmod 600 webserver.pem
+
+	ssh   -i     webserver.pem    -l     ec2-user    ip
 
 
 
@@ -230,46 +228,44 @@ ssh   -i     webserver.pem    -l     ec2-user    ip
 
 
 
-lsblk    (list block : 시스템 연결에 디스크 목록)
-
-NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
-
-nvme0n1       259:0    0   8G  0 disk
-
-├─nvme0n1p1   259:1    0   8G  0 part /
-
-└─nvme0n1p128 259:2    0   1M  0 part
-
-웹 서비스 구축 
-
-$ sudo yum install -y httpd 
-
-	--> apache web service 설치 
-	
-$ sudo systemctl enable httpd 
-
-	--> 시스템 부팅시 자동으로 웹 서비스 시작 
-	
-$ sudo systemctl start httpd 
-
-	--> 지금 웹 서비스 시작 
-	
-$ sudo  chmod   777  /var/www/html
-
-$ echo "Hello world"   >>  /var/www/html/index.html 
-
-	--> 서비스할 웹 페이지 생성 
 
 
-웹 브라우저 (크롬) 
+	lsblk    (list block : 시스템 연결에 디스크 목록)
 
-http://ip/index.html
+	NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 
-http (80 port)
+	nvme0n1       259:0    0   8G  0 disk
+
+	├─nvme0n1p1   259:1    0   8G  0 part /
+
+	└─nvme0n1p128 259:2    0   1M  0 part
+
+	웹 서비스 구축 
+
+	$ sudo yum install -y httpd 
+
+		--> apache web service 설치 
+
+	$ sudo systemctl enable httpd 
+
+		--> 시스템 부팅시 자동으로 웹 서비스 시작 
+
+	$ sudo systemctl start httpd 
+
+		--> 지금 웹 서비스 시작 
+
+	$ sudo  chmod   777  /var/www/html
+
+	$ echo "Hello world"   >>  /var/www/html/index.html 
+
+		--> 서비스할 웹 페이지 생성 
 
 
+	웹 브라우저 (크롬) 
 
+	http://ip/index.html
 
+	http (80 port)
 
 
 
@@ -277,23 +273,27 @@ http (80 port)
 
 
 
-EC2 --> 보안 그룹 --> web server fw --> 인바운트 규칙 --> 인바운드 규칙 편집 
-
-[규칙 추가] 
-
-유형 (HTTP) 소스 (위치무관)
-
-[규칙 저장]
 
 
-$ lsblk 
-
-$ sudo   mkfs  -t ext4   /dev/nvme1n1
-
-$ sudo  mount  /dev/nvme1n1   /mnt 
 
 
-$ sudo df -hT 
+	EC2 --> 보안 그룹 --> web server fw --> 인바운트 규칙 --> 인바운드 규칙 편집 
+
+	[규칙 추가] 
+
+	유형 (HTTP) 소스 (위치무관)
+
+	[규칙 저장]
+
+
+	$ lsblk 
+
+	$ sudo   mkfs  -t ext4   /dev/nvme1n1
+
+	$ sudo  mount  /dev/nvme1n1   /mnt 
+
+
+	$ sudo df -hT 
 
 
 
