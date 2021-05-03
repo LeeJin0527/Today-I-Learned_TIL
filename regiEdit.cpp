@@ -1,5 +1,5 @@
 
-// MFCApplication6View.cpp: CMFCApplication6View 클래스의 구현
+/// MFCApplication6View.cpp: CMFCApplication6View 클래스의 구현
 //
 
 #include "pch.h"
