@@ -1,5 +1,6 @@
 
 ## entirely different commit histories 오류 해결 
+### 디폴트 브랜치를 변경 한 후 변경된 디폴트 브랜치의 이름을 변경한다 .
  > 1. git checkout -b main
  > 2. git push origin main
  > 3. git branch -D master
